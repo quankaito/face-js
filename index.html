@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Nhận diện khuôn mặt</title>
+	<style>
+		body {
+			font-family: 'Manrope', sans-serif;
+			background-color: #f4f4f4;
+			color: #333;
+			margin: 0;
+			padding: 0;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			min-height: 100vh;
+		}
+
+		h1 {
+			text-align: center;
+			margin-bottom: 20px;
+		}
+
+		#loading {
+			text-align: center;
+			margin-bottom: 20px;
+			font-size: 1.2em;
+			color: #555;
+		}
+
+		#file-input {
+			display: block;
+			margin: 20px auto;
+			padding: 10px;
+			border: 1px solid #ddd;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+
+		#container {
+			width: 90%;
+			max-width: 500px;
+			margin: 20px auto;
+			position: relative;
+			border: 1px solid #ddd;
+			border-radius: 10px;
+			overflow: hidden;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+			background-color: #fff;
+		}
+
+		#container img {
+			width: 100%;
+			height: auto;
+			object-fit: contain;
+		}
+
+		canvas {
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	</style>
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+	<h1>Nhóm 3</h1>
+
+	<p id="loading">Hệ thống đang tải dữ liệu ... </p>
+	<input type="file" name="file" id="file-input" />
+
+	<div id="container">
+		<img id="uploaded-image" alt="Image Preview" style="display: none;" />
+		<canvas id="face-overlay" style="display: none;"></canvas>
+	</div>
+
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/face-api.js@0.22.2/dist/face-api.js"
+		integrity="sha256-JOJ7NmVm2chxYZ1KPcAYd2bwVK7NaFj9QKMp7DClews=" crossorigin="anonymous"></script>
+	<script src="/scripts.js"></script>
+</body>
+
+</html>
